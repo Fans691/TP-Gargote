@@ -4,3 +4,6 @@
 # Etape 3:
 - J'ai place la quantite dans la table plat_commande
 
+# Etape 4:
+- Non la cle etrangere id_client peut etre null pour moi au cas ou il y a un procedure stockee qui convertit l'id en varchar("client de passage)
+

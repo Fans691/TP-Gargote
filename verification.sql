@@ -11,3 +11,8 @@ from plat_commande
 join plat on plat.id_plat = plat_commande.id_plat 
 group by id_commande;
 
+-- Partie 4
+select * from commande c
+left join clients cl on c.id_client = cl.id_client
+
+
