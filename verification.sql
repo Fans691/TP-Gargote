@@ -15,4 +15,20 @@ group by id_commande;
 select * from commande c
 left join clients cl on c.id_client = cl.id_client
 
+-- Partie 5
+select
+    s.id_serveur,
+    s.nom_serveur,
+    s.prenom_serveur,
+    count(distinct c.id_commande) as nombre_commandes,
+    coalesce(sum(pc.quantite * p.prix_plat), 0) as chiffre_affaires
+from serveur s
+left join commande c
+    on c.id_serveur = s.id_serveur
+left join plat_commande pc
+    on pc.id_commande = c.id_commande
+left join plat p
+    on p.id_plat = pc.id_plat
+group by s.id_serveur, s.nom_serveur, s.prenom_serveur;
+
 
